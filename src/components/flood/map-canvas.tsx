@@ -13,9 +13,10 @@ const MAP_STYLE: StyleSpecification = {
   sources: {
     carto: {
       type: "raster" as const,
-      tiles: ["https://basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png"],
+      tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
       tileSize: 256,
-      attribution: "&copy; OpenStreetMap &copy; CARTO",
+      maxzoom: 19,
+      attribution: "&copy; OpenStreetMap contributors",
     },
   },
   layers: [{ id: "carto", type: "raster" as const, source: "carto" }],

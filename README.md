@@ -21,9 +21,9 @@ Open `http://localhost:8080`.
 
 ## Map fix
 
-The map no longer depends on a remote OpenFreeMap style JSON. It starts from a MapLibre-compatible raster style using CARTO/OpenStreetMap tiles, so a failure to download a third-party style document cannot leave the map blank. Flood-risk overlays and hotspot layers are still rendered by MapLibre on top of the basemap.
+The map no longer depends on a remote OpenFreeMap style JSON. It starts from a MapLibre-compatible raster style using OpenStreetMap raster tiles, so a failure to download a third-party style document cannot leave the map blank. Flood-risk overlays and hotspot layers are still rendered by MapLibre on top of the basemap.
 
 ## Data sources
 
 - Open-Meteo for forecast/geocoding/elevation data
-- CARTO/OpenStreetMap tiles for the basemap
+- OpenStreetMap raster tiles for the basemap
