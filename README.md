@@ -1,25 +1,29 @@
-# FluxIQ 2.0.1 — Urban Flood Intelligence
+# FluxIQ — Urban Flood Intelligence
 
-Standalone SIH-ready frontend prototype for urban flood nowcasting. It uses live Open-Meteo weather data, Open-Meteo geocoding, rainfall accumulation, soil moisture and runoff indicators, plus MapLibre GL for the GIS view.
+FluxIQ is a flood-monitoring command center built with React, TanStack Start, MapLibre GL, and Open-Meteo weather data.
 
-## Requirements
-- Node.js 18+ (Node.js 20+ recommended)
-- Internet connection (the demo APIs and map tiles are online services)
+## Deploy to Vercel from GitHub
 
-## Run
+1. Push this folder to a GitHub repository.
+2. In Vercel, import the repository.
+3. Keep the default install command (`npm install`/`npm ci`) and use the included build command: `npm run build`.
+4. If you want persistent production authentication/data, add a PostgreSQL `DATABASE_URL` in Vercel. Without it, the app uses its embedded PGlite fallback.
+5. Deploy.
+
+## Run locally
+
 ```bash
 npm install
 npm run dev
 ```
-Open the URL printed by Vite (normally `http://localhost:5173`).
 
-## Build
-```bash
-npm run build
-npm run preview
-```
+Open `http://localhost:8080`.
 
-## Important
-Do **not** open `index.html` directly. Vite must serve the app so JSX modules and assets load correctly.
+## Map fix
 
-The official municipal gauge is intentionally marked OPTIONAL; the prototype does not fabricate sensor readings. NASA Worldview is a navigation link, not a fake live satellite feed.
+The map no longer depends on a remote OpenFreeMap style JSON. It starts from a MapLibre-compatible raster style using CARTO/OpenStreetMap tiles, so a failure to download a third-party style document cannot leave the map blank. Flood-risk overlays and hotspot layers are still rendered by MapLibre on top of the basemap.
+
+## Data sources
+
+- Open-Meteo for forecast/geocoding/elevation data
+- CARTO/OpenStreetMap tiles for the basemap

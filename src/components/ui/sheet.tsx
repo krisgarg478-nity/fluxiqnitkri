@@ -1,0 +1,44 @@
+import * as DialogPrimitive from "@radix-ui/react-dialog";
+import { X } from "lucide-react";
+import type { ComponentProps } from "react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+
+export const Sheet = DialogPrimitive.Root;
+export const SheetTrigger = DialogPrimitive.Trigger;
+export const SheetClose = DialogPrimitive.Close;
+
+export function SheetContent({
+  className,
+  children,
+  title,
+  ...props
+}: ComponentProps<typeof DialogPrimitive.Content> & { title: string }) {
+  return (
+    <DialogPrimitive.Portal>
+      <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-bg/70" />
+      <DialogPrimitive.Content
+        className={cn(
+          "fixed inset-y-0 right-0 z-50 flex h-full w-full max-w-md flex-col bg-surface shadow-[var(--shadow-border)]",
+          className,
+        )}
+        {...props}
+      >
+        <div className="flex items-center justify-between gap-3 border-b border-border px-5 py-4">
+          <DialogPrimitive.Title className="text-sm font-medium">
+            {title}
+          </DialogPrimitive.Title>
+          <DialogPrimitive.Description className="sr-only">
+            {title} details
+          </DialogPrimitive.Description>
+          <DialogPrimitive.Close asChild>
+            <Button variant="ghost" size="icon-sm" aria-label="Close">
+              <X />
+            </Button>
+          </DialogPrimitive.Close>
+        </div>
+        <div className="flex-1 overflow-y-auto px-5 py-5">{children}</div>
+      </DialogPrimitive.Content>
+    </DialogPrimitive.Portal>
+  );
+}
