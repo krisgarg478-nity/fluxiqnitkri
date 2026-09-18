@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "FluxIQ · Urban Flood Intelligence",
+      "hasCanvas": false,
+      "bodyTextLen": 1515,
+      "bodyTextHash": "71ce609d7a41d40cf36f415d05e7f4c465edb0274601ab97653c4f432ee17678",
+      "bodyTextPrefix": "FluxIQ FLOOD DETECTION SYNCING Method Refresh REAL-TIME DECISION",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "FluxIQ · Urban Flood Intelligence",
+      "hasCanvas": false,
+      "bodyTextLen": 1482,
+      "bodyTextHash": "e7aaa87fb0259f85eee85ae2d5d59a78d855300651db3167aa32cebfe48c607a",
+      "bodyTextPrefix": "FluxIQ FLOOD DETECTION SYNCING Method Refresh REAL-TIME DECISION",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
